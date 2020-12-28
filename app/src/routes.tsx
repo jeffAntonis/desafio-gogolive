@@ -31,6 +31,7 @@ function TabsMenu({pages}: any) {
           component={mapComponent(page.component)}
           initialParams={{content: page.content}}
           options={{
+            ...(page.title === 'Comunicar' && {tabBarBadge: 1}),
             tabBarLabel: page.title,
             tabBarIcon: ({color}) => (
               <FontAwesome5Icons name={page.icon} color={color} size={20} />
@@ -72,7 +73,7 @@ function Routes() {
         <Stack.Navigator headerMode="none">
           <Stack.Screen
             name="Tabs"
-            component={() => <TabsMenu pages={pages} />}
+            component={(props) => <TabsMenu {...props} pages={pages} />}
           />
         </Stack.Navigator>
       )}

@@ -4,6 +4,8 @@ import {StatusBar} from 'react-native';
 
 import Routes from './routes';
 
+console.disableYellowBox = true;
+
 const App: React.FC = () => {
   return (
     <>

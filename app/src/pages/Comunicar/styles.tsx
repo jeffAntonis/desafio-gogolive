@@ -5,5 +5,3 @@ export const Container = styled.View`
   background-color: #fff;
   padding: 20px;
 `;
-
-export const Title = styled.Text``;

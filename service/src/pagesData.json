@@ -1,9 +1,9 @@
 [
-  { "title": "Home", "icon": "fa-home", "url": "page://home", "content": [] },
+  { "title": "Home", "icon": "home", "url": "page://home", "content": [] },
   {
-    "title": "Camera",
-    "icon": "fa-building",
-    "url": "page://camera",
+    "title": "Camara",
+    "icon": "university",
+    "url": "page://camara",
     "content": [
       {
         "type": "post",
@@ -29,25 +29,25 @@
   },
   {
     "title": "Comunicar",
-    "icon": "fa-chat",
+    "icon": "comments",
     "url": "page://comunicar",
     "content": []
   },
   {
     "title": "Proteção civil",
-    "icon": "fa-danger",
+    "icon": "exclamation-triangle",
     "url": "page://protecao-civil",
     "content": []
   },
   {
     "title": "Covid",
-    "icon": "fa-band-aid",
+    "icon": "band-aid",
     "url": "page://covid",
     "content": []
   },
   {
     "title": "Agenda",
-    "icon": "fa-calendar",
+    "icon": "calendar-alt",
     "url": "page://agenda",
     "content": []
   }

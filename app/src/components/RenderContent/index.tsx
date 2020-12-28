@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 
 import Posts from '../Posts';
 import api from '../../services/api';
+import {Post} from '../../interfaces/post';
 
-import {Title} from './styles';
+import {Title, Content} from './styles';
 
 const RenderContent: React.FC<{content: any}> = ({content}) => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<[Post]>([]);
 
   const getPosts = async () => {
     try {
@@ -29,7 +30,9 @@ const RenderContent: React.FC<{content: any}> = ({content}) => {
     <>
       {content.map((row: any) => (
         <>
-          <Title key={row.title}>{row.title}</Title>
+          <Content>
+            <Title key={row.title}>{row.title}</Title>
+          </Content>
           {row.type === 'post' && (
             <Posts categories={row?.properties?.categories} posts={posts} />
           )}

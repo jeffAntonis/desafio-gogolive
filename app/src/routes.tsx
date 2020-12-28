@@ -7,14 +7,7 @@ import capitalize from 'capitalize';
 
 import api from './services/api';
 import {mapComponent} from './utils/mapper';
-
-type PageType = {
-  title: string;
-  url: string;
-  component: string;
-  icon: string;
-  content: any;
-};
+import {Page} from './interfaces/page';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -22,9 +15,9 @@ const Tab = createMaterialBottomTabNavigator();
 function TabsMenu({pages}: any) {
   return (
     <Tab.Navigator
-      barStyle={{backgroundColor: '#FFF'}}
+      barStyle={{backgroundColor: '#f8f8f8'}}
       initialRouteName="Camara">
-      {pages.map((page: PageType) => (
+      {pages.map((page: Page) => (
         <Tab.Screen
           key={page.title}
           name={page.title}
@@ -44,12 +37,12 @@ function TabsMenu({pages}: any) {
 }
 
 function Routes() {
-  const [pages, setPages] = useState<PageType[]>([]);
+  const [pages, setPages] = useState<Page[]>([]);
 
   const getPages = async () => {
     try {
       const {data} = await api.get('/pages');
-      data.map((page: PageType) => {
+      data.map((page: Page) => {
         let url = page.url;
         url = url.replace(/^page:\/\//g, '');
         url = url.replace(/-/g, ' ');
